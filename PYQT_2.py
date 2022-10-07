@@ -12,10 +12,12 @@ class MyApp(QWidget): # Myapp 클래스를 생성하는데, QWidget 클래스를
         self.initUI()
 
     def initUI(self):
-        btn = QPushButton('Quit', self)
+        btn = QPushButton('Quit', self) # 첫번 째 파라미터에는 버튼에 표시될 텍스트(Quit)를, 두번 째 파라미터에는 버튼이 위치할 부모 위젯을 입력.
         btn.move(100,100)
         btn.resize(btn.sizeHint())
-        btn.clicked.connect(QCoreApplication.instance().quit)
+        btn.clicked.connect(QCoreApplication.instance().quit) 
+        # PYQT에서의 이벤트 처리는 [시그널 + 슬롯]의 메커니즘으로 이루어짐.
+        # 버튼(인스턴스) btn을 클릭하면 시그널(clicked)이 만들어짐.
 
         self.setWindowTitle('Test')
         self.setWindowIcon(QIcon('instagram_logo.jfif'))
