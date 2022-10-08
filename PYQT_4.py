@@ -32,7 +32,7 @@ class MyApp(QMainWindow):
         btn2.resize(btn.sizeHint())
         btn2.clicked.connect(QCoreApplication.instance().quit)
 
-        exitAction = QAction(QIcon('exit.png'), 'Exit', self)
+        exitAction = QAction(QIcon('image\exit.png'), 'Exit', self)
         exitAction.setShortcut('Ctrl+Q') # 본 기능의 단축키를 설정 가능.
         exitAction.setStatusTip('<b>Exit application</b>')
         exitAction.triggered.connect(qApp.quit) # exitAction을 눌렀을 때 생성되는 triggered 시그널이 quit() 메서드에 연결되어, 어플리케이션을 종료.
@@ -45,7 +45,7 @@ class MyApp(QMainWindow):
         filemenu2.addAction(exitAction)
 
         self.setWindowTitle('Statusbar')
-        self.setWindowIcon(QIcon('instagram_logo.jfif'))
+        self.setWindowIcon(QIcon('image\instagram_logo.jfif'))
         self.setGeometry(1200, 1000, 700, 500)
         self.show()
 
