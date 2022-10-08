@@ -22,29 +22,31 @@ class MyApp(QMainWindow):
 
         btn = QPushButton('Quit', self)
         btn.setToolTip('<b>Quit</b>')
-        btn.move(50, 50)
+        btn.move(200, 200)
         btn.resize(btn.sizeHint())
         btn.clicked.connect(QCoreApplication.instance().quit)
         
         btn2 = QPushButton('Button', self)
         btn2.setToolTip('<b>Button</b>')
-        btn2.move(150, 150)
+        btn2.move(400, 200)
         btn2.resize(btn.sizeHint())
         btn2.clicked.connect(QCoreApplication.instance().quit)
 
         exitAction = QAction(QIcon('exit.png'), 'Exit', self)
-        exitAction.setShortcut('Ctrl+Q')
+        exitAction.setShortcut('Ctrl+Q') # 본 기능의 단축키를 설정 가능.
         exitAction.setStatusTip('<b>Exit application</b>')
-        exitAction.triggered.connect(qApp.quit)
+        exitAction.triggered.connect(qApp.quit) # exitAction을 눌렀을 때 생성되는 triggered 시그널이 quit() 메서드에 연결되어, 어플리케이션을 종료.
 
         menubar = self.menuBar()
         menubar.setNativeMenuBar(False) # menubar.setNativeMenuBar(False)를 추가함으로써 macOS에서도 Windows 환경과 동일한 결과를 얻을 수 있다.
         filemenu = menubar.addMenu('&File') # 메뉴 이름 앞에 앰퍼샌드(&)를 더하면, (Alt + 앰퍼샌드 뒤에 있는 알파벳)을 단축키로 활용 가능.
         filemenu.addAction(exitAction)
+        filemenu2 = menubar.addMenu('&Modify') # 이와 같은 방식으로 여러가지 메뉴를 생성 가능.
+        filemenu2.addAction(exitAction)
 
         self.setWindowTitle('Statusbar')
         self.setWindowIcon(QIcon('instagram_logo.jfif'))
-        self.setGeometry(1000, 1000, 500, 500)
+        self.setGeometry(1200, 1000, 700, 500)
         self.show()
 
 
