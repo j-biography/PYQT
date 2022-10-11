@@ -9,3 +9,25 @@ class MyApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.initUI()
+    
+    def initUI(self):
+        exitAction = QAction(QIcon('image\exit.png'), 'Exit', self)
+        exitAction.setShortcut('Ctrl+Q')
+        exitAction.setStatusTip('<b>Exit application</b>')
+        exitAction.triggered.connect(qApp.quit)
+
+        self.statusBar()
+
+        self.toolbar = self.addToolBar('Exit')
+        self.toolbar.addAction(exitAction)
+
+        self.setWindowTitle('Toolbar')
+        self.setWindowIcon(QIcon('image\instagram_logo.jfif'))
+        self.setGeometry(1200, 1000, 700, 500)
+        self.show()
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = MyApp()
+    sys.exit(app.exec_())       
