@@ -16,10 +16,10 @@ class MyApp(QWidget):
         self.show()
 
     def center(self): # center() 메서드 생성
-        qr = self.frameGeometry() # frameGeometry() 메서드를 통해 어플리케이션 창의 위치와 크기 정보를 가져옴.
+        qr = self.frameGeometry() # frameGeometry() 메서드를 통해 self(어플리케이션 창)의 위치와 크기 정보를 가져옴.
         cp = QDesktopWidget().availableGeometry().center() # QDesktopWidget().availableGeometry().center() 메서드를 통해 내 모니터의 가운데 위치를 파악.
-        qr.moveCenter(cp)
-        self.move(qr.topLeft())
+        qr.moveCenter(cp) # qr(어플리케이션 창의 좌표)의 직사각형 위치를 cp(내 모니터) 중심으로 이동.
+        self.move(qr.topLeft()) 
 
 
 if __name__ == '__main__':
