@@ -1,3 +1,4 @@
+# 스타일 변경 + 현재까지 학습한 내용 적용
 
 import sys
 from PyQt5.QtWidgets import *

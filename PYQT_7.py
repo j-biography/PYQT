@@ -1,3 +1,4 @@
+# 현재 날짜 및 시간 표시(상태표시줄)
 
 import sys
 from PyQt5.QtCore import QDate, Qt

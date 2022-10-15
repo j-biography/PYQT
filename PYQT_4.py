@@ -1,4 +1,4 @@
-
+# 상태바(statusBar) + 메뉴바(menuBar) 생성
 
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QToolTip, QAction, qApp

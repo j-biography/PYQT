@@ -1,3 +1,4 @@
+# 어플리케이션의 위치를 윈도우의 가운데로 이동.
 
 import sys
 from PyQt5.QtWidgets import *
