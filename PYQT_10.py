@@ -26,7 +26,7 @@ class MyApp(QWidget):
         vbox.addLayout(hbox)
         vbox.addStretch(1) # 수직박스(QVBoxLayout)를 생성하고, 수평박스(QHBoxLayout = hbox)를 넣어준다.
 
-        self.setLayout(vbox)
+        self.setLayout(vbox) # 수직박스를 창의 메인 레이아웃으로 설정.
 
         self.setWindowTitle('Box Layout')
         self.setGeometry(300, 300, 300, 200)
