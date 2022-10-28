@@ -25,8 +25,8 @@ class MyApp(QWidget):
         self.show()
 
     def mouseMoveEvent(self, A):
-        x = A.x()
-        y = A.y()
+        x = A.x() # 현재 마우스 커서 위치(A)의 x값
+        y = A.y() # 현재 마우스 커서 위치(A)의 y값
 
         text = 'x value:{0}, y value:{1}'.format(x, y)
         self.label.setText(text)
