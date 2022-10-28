@@ -1,39 +1,39 @@
 # 사용자 정의 시그널 생성 + btn과 시그널 연결
 
-# import sys
-# from PyQt5.QtCore import *
-# from PyQt5.QtWidgets import *
+import sys
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
 
-# class Signal(QObject):
+class Signal(QObject):
 
-#     closeApp = pyqtSignal()
+    closeApp = pyqtSignal()
 
-# class MyApp(QMainWindow):
+class MyApp(QMainWindow):
 
-#     def __init__(self):
-#         super().__init__()
-#         self.initUI()
+    def __init__(self):
+        super().__init__()
+        self.initUI()
 
-#     def initUI(self):
-#         self.c = Signal()
-#         self.c.closeApp.connect(self.close)
+    def initUI(self):
+        self.c = Signal()
+        self.c.closeApp.connect(self.close)
 
-#         btn1 = QPushButton('EXIT', self)
-#         vbox = QVBoxLayout()
-#         vbox.addWidget(btn1)
+        btn1 = QPushButton('EXIT', self)
+        vbox = QVBoxLayout()
+        vbox.addWidget(btn1)
 
-#         btn1.clicked.connect(self.c.closeApp)
+        btn1.clicked.connect(self.c.closeApp)
 
-#         self.setLayout(vbox)
-#         self.setWindowTitle('Personal Emitting Signal')
-#         self.setGeometry(300, 300, 300, 200)
-#         self.show()
+        self.setLayout(vbox)
+        self.setWindowTitle('Personal Emitting Signal')      
+        self.setGeometry(300, 300, 300, 200)
+        self.show()
 
 
-# if __name__ == '__main__':
-#     app = QApplication(sys.argv)
-#     ex = MyApp()
-#     sys.exit(app.exec_())
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = MyApp()
+    sys.exit(app.exec_())
 
 
 # ------------ 원문은 아래에
